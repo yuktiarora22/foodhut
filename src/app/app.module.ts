@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
 import { HomeComponent } from './home/home.component';
 import { OrderCartComponent } from './order-cart/order-cart.component';
+import { SearchRatingComponent } from './search-rating/search-rating.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrderCartComponent } from './order-cart/order-cart.component';
     SearchFoodPipe,
     MenuComponent,
     OrderConfirmedComponent,
-    OrderCartComponent
+    OrderCartComponent,
+    SearchRatingComponent
   ],
   imports: [
     BrowserModule,

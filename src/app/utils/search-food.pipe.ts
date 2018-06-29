@@ -5,7 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchFoodPipe implements PipeTransform {
   // filters items by the specified key matching it with the searchText
-  transform(items: any[], searchText: string): any[] {
+  transform(
+    items: any[],
+    searchText: string,
+    key1: string,
+    key2: string,
+    key3: string
+  ): any[] {
     if (!items) {
       return [];
     }
@@ -14,20 +20,20 @@ export class SearchFoodPipe implements PipeTransform {
     }
     searchText = searchText.toLowerCase();
     return items.filter(item => {
-      let returnItem;
       const keys = Object.keys(item);
-      debugger;
-      // return item[key].toLowerCase().includes(searchText);
-
-      keys.forEach(key => {
-        returnItem = returnItem + item[key].toLowerCase().includes(searchText);
-      });
-
-      // const builderId = it.builderId.toString().includes(searchString)
-      //      const groupName = it.groupName.toLowerCase().includes(searchString.toLowerCase())
-      //      const companyPersonName = it.companyPersonName.toLowerCase().includes(searchString.toLowerCase())
-      //      console.log( builderId + groupName + companyPersonName);
-      //      return (builderId + groupName + companyPersonName );
+      const isInKey1 = item[key1]
+        .toString()
+        .toLowerCase()
+        .includes(searchText);
+      const isInKey2 = item[key2]
+        .toString()
+        .toLowerCase()
+        .includes(searchText);
+      const isInKey3 = item[key3]
+        .toString()
+        .toLowerCase()
+        .includes(searchText);
+      return isInKey1 + isInKey2 + isInKey3;
     });
   }
 }

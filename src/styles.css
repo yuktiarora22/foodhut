@@ -5,7 +5,7 @@ html {
   height: 100%;
 }
 
-hr {
+hr.divider {
   max-width: 50px;
   border-width: 3px;
   border-color: #f05f40;
