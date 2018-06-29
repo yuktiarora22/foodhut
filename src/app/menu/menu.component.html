@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-8 ingredients">{{item.ingredients}}</div>
           <div class="col-md-4 text-right">
-            <a class="btn btn-success btn-sm">{{textStrings.AddText}}</a>
+            <a class="btn btn-success btn-sm" (click)="addItemToCart(item)">{{textStrings.AddText}}</a>
           </div>
         </div>
         <hr>
@@ -25,7 +25,8 @@
     </div>
 
     <div class="col-md-4 px-5" id="orderSummary">
-      <app-order-cart [header]="textStrings.CartEmptyText" [image]="'cart-empty.png'" [helpText]="textStrings.OrderFromMenuText"></app-order-cart>
+      <app-order-cart [header]="itemsInCart.length ? textStrings.CartText : textStrings.CartEmptyText" [image]="'cart-empty.png'"
+        [helpText]="itemsInCart.length ? textStrings.DeliverSoonText : textStrings.OrderFromMenuText" [cartItems]="itemsInCart"></app-order-cart>
     </div>
 
   </div>

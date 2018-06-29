@@ -14,12 +14,13 @@ export class MenuComponent implements OnInit {
 
   foodItems$: Observable<Menu[]>;
   textStrings = Constants.textStrings;
+  itemsInCart: Menu[] = [];
 
   ngOnInit() {
     this.foodItems$ = this.menuService.getFoodItems();
   }
 
-  change(data) {
-    debugger;
+  addItemToCart(item) {
+    this.itemsInCart.push(item);
   }
 }

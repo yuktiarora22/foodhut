@@ -1,3 +1,8 @@
 <h5>{{header}}</h5>
-<img src="/assets/images/{{image}}">
+<img *ngIf="!cartItems.length" src="/assets/images/{{image}}">
 <div>{{helpText}}</div>
+
+
+<div class="checkout-btn">
+  <a class="btn btn-success btn-block my-4">CHECKOUT</a>
+</div>
