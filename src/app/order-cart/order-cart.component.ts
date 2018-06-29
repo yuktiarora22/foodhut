@@ -10,6 +10,8 @@ export class OrderCartComponent implements OnInit {
   constructor() {}
 
   @Input() header: string;
+  @Input() helpText: string;
+  @Input() image: string;
   @Input() cartItems: Menu[];
 
   ngOnInit() {}

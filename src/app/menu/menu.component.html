@@ -7,6 +7,8 @@
     </div>
 
     <div class="col-md-6" id="foodMenu">
+      <h3>FoodHut Menu</h3>
+      <hr class="divider">
       <div *ngFor='let item of foodItems$ | async | searchFood : searchText : "title" : "ingredients" : "price"'>
         <div class="row">
           <div class="col-md-8 food-name">{{item.title}}</div>
@@ -15,15 +17,15 @@
         <div class="row">
           <div class="col-md-8 ingredients">{{item.ingredients}}</div>
           <div class="col-md-4 text-right">
-            <a class="btn btn-success btn-sm">Add</a>
+            <a class="btn btn-success btn-sm">{{textStrings.AddText}}</a>
           </div>
         </div>
         <hr>
       </div>
     </div>
 
-    <div class="col-md-4" id="orderSummary">
-      <app-order-cart [header]="textStrings.CartEmptyText"></app-order-cart>
+    <div class="col-md-4 px-5" id="orderSummary">
+      <app-order-cart [header]="textStrings.CartEmptyText" [image]="'cart-empty.png'" [helpText]="textStrings.OrderFromMenuText"></app-order-cart>
     </div>
 
   </div>

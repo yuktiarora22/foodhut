@@ -5,6 +5,8 @@ export class Constants {
 
   static textStrings = {
     SearchDishesText: 'Search for dishes...',
-    CartEmptyText: 'Cart Empty'
+    CartEmptyText: 'Cart Empty',
+    OrderFromMenuText: 'Go ahead, order some yummy items from the menu.',
+    AddText: 'Add'
   };
 }
