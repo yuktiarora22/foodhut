@@ -1,8 +1,27 @@
-<h5>{{header}}</h5>
-<img *ngIf="!cartItems.length" src="/assets/images/{{image}}">
-<div>{{helpText}}</div>
+<div class="cart">
+  <h4>{{header}}</h4>
+  <p class="font-weight-light" *ngIf="cartItems.length">
+    {{cartItems.length > 1 ? cartItems.length + ' items' : cartItems.length + ' item'}}
+  </p>
 
+  <div class="pt-2">
+    <img *ngIf="!cartItems.length; else itemsList" src="/assets/images/{{image}}">
+    <div #itemsList *ngFor="let item of cartItems">
+      <div class="row">
+        <div class="col-md-8 food-name">{{item.title}}</div>
+        <div class="col-md-4 text-right">{{item.price | currency:'INR'}}</div>
+      </div>
+    </div>
+  </div>
 
-<div class="checkout-btn">
-  <a class="btn btn-success btn-block my-4">CHECKOUT</a>
+  <div class="pt-5 font-italic">{{helpText}}</div>
+
+  <div class="pt-5" *ngIf="cartItems.length">
+    <div class="row">
+      <h6 class="col-md-8">Subtotal</h6>
+      <h6 class="col-md-4 text-right">200</h6>
+    </div>
+    <a class="btn btn-success btn-block my-3">CHECKOUT</a>
+  </div>
+
 </div>
