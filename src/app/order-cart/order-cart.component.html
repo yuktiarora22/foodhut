@@ -6,13 +6,15 @@
 
   <div class="pt-2">
     <img *ngIf="!cartItems.length; else itemsList" src="/assets/images/{{image}}">
-    <div #itemsList *ngFor="let item of cartItems; let i = index">
-      <div class="row align-items-center">
-        <div class="col-md-6 food-name">{{item.title}}</div>
-        <div class="col-md-4 text-right">{{item.price | currency:'INR'}}</div>
-        <a class="btn col-md-2 font-weight-bold" (click)="removeItem(i);">x</a>
+    <ng-template #itemsList>
+      <div *ngFor="let item of cartItems; let i = index">
+        <div class="row align-items-center">
+          <div class="col-md-6 food-name">{{item.title}}</div>
+          <div class="col-md-4 text-right">{{item.price | currency:'INR'}}</div>
+          <a class="btn col-md-2 font-weight-bold" (click)="removeItem(i);">x</a>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </div>
 
   <div class="pt-5 font-italic">{{helpText}}</div>

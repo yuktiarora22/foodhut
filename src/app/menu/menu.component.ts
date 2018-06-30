@@ -12,7 +12,7 @@ import { Constants } from '../utils/constants';
 export class MenuComponent implements OnInit {
   constructor(private menuService: MenuService) {}
 
-  foodItems$: Observable<Menu[]>;
+  foodItems: Menu[];
   textStrings = Constants.textStrings;
   itemsInCart: Menu[] = [];
 
@@ -20,9 +20,13 @@ export class MenuComponent implements OnInit {
   priceFilter: string;
   ratingFilter: string;
   categoryFilter: number;
+  loading = true;
 
   ngOnInit() {
-    this.foodItems$ = this.menuService.getFoodItems();
+    this.menuService.getFoodItems().subscribe(res => {
+      this.foodItems = res;
+      this.loading = false;
+    });
   }
 
   addItemToCart(item) {

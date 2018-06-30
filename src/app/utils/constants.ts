@@ -4,6 +4,7 @@ export class Constants {
   };
 
   static textStrings = {
+    WelcomeToFoodHutText: 'Welcome to FoodHut!!',
     SearchDishesText: 'Search for dishes...',
     CartEmptyText: 'Cart Empty',
     CartText: 'Cart',
@@ -13,7 +14,10 @@ export class Constants {
     ClearFiltersText: 'Clear all filters',
     FilterByPriceText: 'Filter by price',
     FilterByRatingText: 'Filter by rating',
-    FilterByCategoryText: 'Filter by category'
+    FilterByCategoryText: 'Filter by category',
+    OrderNowText: 'Order now',
+    OrderAgainText: 'Order again',
+    OrderWillBeDeliveredText: 'Your order will be delivered in 40 minutes'
   };
 
   static priceFilters = {

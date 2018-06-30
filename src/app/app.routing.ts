@@ -8,11 +8,11 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'foodhut',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'foodhut',
     component: HomeComponent
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'foodhut'
   }
 ];
 

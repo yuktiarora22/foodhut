@@ -11,7 +11,8 @@ export class SearchFoodPipe implements PipeTransform {
     searchText: string,
     key1: string,
     key2: string,
-    key3: string
+    key3: string,
+    key4: string
   ): any[] {
     if (!items) {
       return [];
@@ -34,7 +35,11 @@ export class SearchFoodPipe implements PipeTransform {
         .toString()
         .toLowerCase()
         .includes(searchText);
-      return isInKey1 + isInKey2 + isInKey3;
+      const isInKey4 = item[key4]
+        .toString()
+        .toLowerCase()
+        .includes(searchText);
+      return isInKey1 + isInKey2 + isInKey3 + isInKey4;
     });
   }
 }

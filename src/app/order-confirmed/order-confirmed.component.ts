@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from '../utils/constants';
 
 @Component({
   selector: 'app-order-confirmed',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-confirmed.component.css']
 })
 export class OrderConfirmedComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  textStrings = Constants.textStrings;
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
