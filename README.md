@@ -1,27 +1,11 @@
 # Foodhut
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+This application allows customers to order food from the Foodhut menu. You can search food items by text that will match the food title, ingredients, rating, and price. You can also filter food items by price, rating and category (Veg/Non-veg). Add items to the cart and proceed to checkout to confirm your order.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repository and run `npm install`.
 
-## Code scaffolding
+Run `ng serve` for a dev server. Navigate to `http://localhost:9002/`. The app will automatically reload if you change any of the source files.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can also run `ng serve -o` to open the app directly in your browser. It will automatically navigate to `http://localhost:9002/`
