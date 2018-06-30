@@ -12,6 +12,9 @@ import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.compo
 import { HomeComponent } from './home/home.component';
 import { OrderCartComponent } from './order-cart/order-cart.component';
 import { SearchRatingComponent } from './search-rating/search-rating.component';
+import { FilterByPricePipe } from './utils/filter-by-price.pipe';
+import { FilterByCategoryPipe } from './utils/filter-by-category.pipe';
+import { FilterByRatingPipe } from './utils/filter-by-rating.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { SearchRatingComponent } from './search-rating/search-rating.component';
     MenuComponent,
     OrderConfirmedComponent,
     OrderCartComponent,
-    SearchRatingComponent
+    SearchRatingComponent,
+    FilterByPricePipe,
+    FilterByCategoryPipe,
+    FilterByRatingPipe
   ],
   imports: [
     BrowserModule,

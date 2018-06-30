@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Menu } from '../menu/menu.model';
 
 @Pipe({
   name: 'searchFood'
@@ -6,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchFoodPipe implements PipeTransform {
   // filters items by the specified key matching it with the searchText
   transform(
-    items: any[],
+    items: Menu[],
     searchText: string,
     key1: string,
     key2: string,

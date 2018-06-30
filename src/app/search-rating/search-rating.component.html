@@ -1,1 +1,70 @@
-<input class="form-control" [ngModel]="searchInput" (ngModelChange)="changeSearchText($event);" placeholder="{{searchPlaceholder}}">
+<input class="form-control" [(ngModel)]="searchInput" (ngModelChange)="changeSearchText($event);" placeholder="{{textStrings.SearchDishesText}}">
+
+<div class="pt-2">
+  <a class="btn btn-warning" (click)="clearAllFilters();">{{textStrings.ClearFiltersText}}</a>
+</div>
+
+<div class="pt-3">
+  <h5>{{textStrings.FilterByPriceText}}</h5>
+  <hr>
+  <div>
+    <label>
+      <input type="radio" name="price" [(ngModel)]="priceFilter" (ngModelChange)="changePriceFilter($event);" [value]="priceFilters.below100"> Below {{100 | currency:'INR'}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="price" [(ngModel)]="priceFilter" (ngModelChange)="changePriceFilter($event);" [value]="priceFilters.between100to200"> {{100 | currency:'INR'}} - {{200 | currency:'INR'}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="price" [(ngModel)]="priceFilter" (ngModelChange)="changePriceFilter($event);" [value]="priceFilters.between200to300"> {{200 | currency:'INR'}} - {{300 | currency:'INR'}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="price" [(ngModel)]="priceFilter" (ngModelChange)="changePriceFilter($event);" [value]="priceFilters.above300"> Above {{300 | currency:'INR'}}
+    </label>
+  </div>
+</div>
+
+<div class="pt-3">
+  <h5>{{textStrings.FilterByRatingText}}</h5>
+  <hr>
+  <div>
+    <label>
+      <input type="radio" name="rating" [(ngModel)]="ratingFilter" (ngModelChange)="changeRatingFilter($event);" [value]="ratingFilters.above1"> {{ratingFilters.above1}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="rating" [(ngModel)]="ratingFilter" (ngModelChange)="changeRatingFilter($event);" [value]="ratingFilters.above2"> {{ratingFilters.above2}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="rating" [(ngModel)]="ratingFilter" (ngModelChange)="changeRatingFilter($event);" [value]="ratingFilters.above3"> {{ratingFilters.above3}}
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="rating" [(ngModel)]="ratingFilter" (ngModelChange)="changeRatingFilter($event);" [value]="ratingFilters.above4"> {{ratingFilters.above4}}
+    </label>
+  </div>
+</div>
+
+<div class="pt-3">
+  <h5>{{textStrings.FilterByCategoryText}}</h5>
+  <hr>
+  <div>
+    <label>
+      <input type="radio" name="category" [(ngModel)]="categoryFilter" (ngModelChange)="changeCategoryFilter($event);" [value]="categoryFilters.veg"> Veg
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="category" [(ngModel)]="categoryFilter" (ngModelChange)="changeCategoryFilter($event);" [value]="categoryFilters.nonveg"> Non-veg
+    </label>
+  </div>
+</div>

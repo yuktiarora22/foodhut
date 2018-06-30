@@ -5,3 +5,25 @@
 .food-name {
   font-weight: bold;
 }
+
+.veg-food:before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: #009b49;
+  position: absolute;
+  border-radius: 50%;
+  top: 9px;
+  left: 0;
+}
+
+.nonveg-food:before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: #ff0000;
+  position: absolute;
+  border-radius: 50%;
+  top: 9px;
+  left: 0;
+}

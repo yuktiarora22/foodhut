@@ -3,22 +3,27 @@
   <div class="row pt-3">
 
     <div class="col-md-2">
-      <app-search-rating [searchPlaceholder]="textStrings.SearchDishesText" (searchText)="searchText = $event;"></app-search-rating>
+      <app-search-rating (searchText)="searchText = $event;" (priceFilterOutput)="priceFilter = $event;" (categoryFilterOutput)="categoryFilter = $event;"
+        (ratingFilterOutput)="ratingFilter = $event;"></app-search-rating>
     </div>
 
     <div class="col-md-6" id="foodMenu">
       <h3>FoodHut Menu</h3>
       <hr class="divider">
-      <div *ngFor='let item of foodItems$ | async | searchFood : searchText : "title" : "ingredients" : "price"'>
+      <div *ngFor='let item of foodItems$ | async | searchFood : searchText : "title" : "ingredients" : "price" | filterByPrice : priceFilter | filterByCategory : categoryFilter | filterByRating : ratingFilter'>
         <div class="row">
-          <div class="col-md-8 food-name">{{item.title}}</div>
+          <div class="col-md-8 food-name" [ngClass]="{'veg-food': item.category === 0, 'nonveg-food': item.category === 1}">{{item.title}}</div>
           <div class="col-md-4 text-right">{{item.price | currency:'INR'}}</div>
         </div>
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-md-8 ingredients">{{item.ingredients}}</div>
           <div class="col-md-4 text-right">
             <a class="btn btn-success btn-sm" (click)="addItemToCart(item)">{{textStrings.AddText}}</a>
           </div>
+        </div>
+        <div class="row pt-2">
+          <div class="col-md-8 font-weight-light ingredients">
+            Rating: {{item.rating}}</div>
         </div>
         <hr>
       </div>

@@ -1,10 +1,8 @@
 export class Menu {
   title: string;
-  type: number; // 0 - veg, 1 - non-veg
-  category: string;
+  category: number; // 0 - veg, 1 - non-veg
   rating: number;
   price: number;
   summary: string;
   ingredients: string[];
-  display_image: string;
 }

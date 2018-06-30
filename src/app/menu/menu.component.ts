@@ -16,6 +16,11 @@ export class MenuComponent implements OnInit {
   textStrings = Constants.textStrings;
   itemsInCart: Menu[] = [];
 
+  searchText: string;
+  priceFilter: string;
+  ratingFilter: string;
+  categoryFilter: number;
+
   ngOnInit() {
     this.foodItems$ = this.menuService.getFoodItems();
   }
